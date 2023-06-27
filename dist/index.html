@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <span>Weatherify</span>
+        </div>
+        <div class="content">
+            <div class="current-city">
+                <span id="currentCity" ></span>
+                <button type="button" id="changeCity">Change city</button>
+                <div class="change-city disabled" id="changeCityForm">
+                    <span>Enter your city</span>
+                    <span id="errorMessage" class="disabled">Please enter a valid city!</span>
+                    <input type="text" id="cityInput">
+                    <button type="button" id="sendNewCity" >Change</button>
+                </div>
+            </div>
+            <div class="weather-cards">
+                <div class="card">
+                    <span id="day0-date"></span>
+                    <img src="../img/wi-snow-wind.svg" id="day0snow" class="disabled" alt="">
+                    <img src="../img/wi-cloud.svg" id="day0cloud" class="disabled" alt="">
+                    <img src="../img/wi-day-sunny.svg" id="day0sunny" class="disabled" alt="">
+                    <img src="../img/wi-rain.svg" id="day0rain" class="disabled" alt="">
+                    <img src="../img/wi-lightning.svg" id="day0thunder" class="disabled" alt="">
+                    <span id="day0-text" class="weather-description"></span>
+                </div>
+                <div class="card">
+                    <span id="day1-date"></span>
+                    <img src="../img/wi-snow-wind.svg" id="day1snow" class="disabled" alt="">
+                    <img src="../img/wi-cloud.svg" id="day1cloud" class="disabled" alt="">
+                    <img src="../img/wi-day-sunny.svg" id="day1sunny" class="disabled" alt="">
+                    <img src="../img/wi-rain.svg" id="day1rain" class="disabled" alt="">
+                    <img src="../img/wi-lightning.svg" id="day1thunder" class="disabled" alt="">
+                    <span id="day1-text" class="weather-description"></span>
+                </div>
+                <div class="card">
+                    <span id="day2-date"></span>
+                    <img src="../img/wi-snow-wind.svg" id="day2snow" class="disabled" alt="">
+                    <img src="../img/wi-cloud.svg" id="day2cloud" class="disabled" alt="">
+                    <img src="../img/wi-day-sunny.svg" id="day2sunny" class="disabled" alt="">
+                    <img src="../img/wi-rain.svg" id="day2rain" class="disabled" alt="">
+                    <img src="../img/wi-lightning.svg" id="day2thunder" class="disabled" alt="">
+                    <span id="day2-text" class="weather-description"></span>
+                </div>
+                <div class="card">
+                    <span id="day3-date" ></span>
+                    <img src="../img/wi-snow-wind.svg" id="day3snow" class="disabled" alt="">
+                    <img src="../img/wi-cloud.svg" id="day3cloud" class="disabled" alt="">
+                    <img src="../img/wi-day-sunny.svg" id="day3sunny" class="disabled" alt="">
+                    <img src="../img/wi-rain.svg" id="day3rain" class="disabled" alt="">
+                    <img src="../img/wi-lightning.svg" id="day3thunder" class="disabled" alt="">
+                    <span id="day3-text" class="weather-description"></span>
+                </div>
+            </div>
+            <div class="additional-info">
+                <div class="wind card">
+                    <span>Wind</span>
+                    <div class="wind-info">
+                        <img src="../img/wi-strong-wind.svg" alt="">
+                        <span id="windSpeed"></span>
+                    </div>
+                </div>
+                <div class="temperature card">
+                    <span>Temperature</span>
+                    <div class="temperature-info">
+                        <span id="currentTemp" ></span>
+                        <img src="../img/wi-thermometer.svg" alt="">
+                    </div>
+                </div>
+                <div class="air card">
+                    <span>Air pollution</span>
+                    <div class="air-info">
+                        <span id="currentAQI"></span>
+                        <span id="AQIadvice"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

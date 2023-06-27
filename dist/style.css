@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------- / ---------- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard{
+    height: 80%;
+    width: 60%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.header{
+    width: 100%;
+    border-radius: 15px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header > span {
+    width: 90%;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 15px;
+}
+
+.content {
+    padding: 10px 0px;
+    width: 95%;
+    height: calc(100% - 100px);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.current-city {
+    margin: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+}
+
+.current-city span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.current-city button {
+    border: none;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+}
+
+.change-city {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    right: -280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.change-city span{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.change-city input {
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.change-city input:focus{
+    border: none;
+    outline: none;
+}
+
+#errorMessage {
+    text-align: center;
+    font-size: 1rem;
+    color: #FF605C;
+}
+
+#errorMessage.disabled {
+    display: none;
+}
+
+.change-city.disabled {
+    display: none;
+}
+
+.weather-cards {
+    margin: 50px 0;
+    width: 100%;
+    height: 38%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card {
+    border: 2px solid white;
+    height: 100%;
+    width: 20%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    align-self: flex-start;
+    transition: 0.3s ease-in-out;
+}
+
+.weather-cards .card {
+    justify-content: space-between;
+}
+
+.card > * {
+    pointer-events: none;
+}
+
+.card > span {
+    color: black;
+    width: 100%;
+    text-align: center;
+    border-radius: 13px 13px 0 0;
+    padding: 10px 0;
+    background-color: white;
+    user-select: none;
+}
+
+.card .weather-description {
+    border-radius: 0 0 13px 13px;
+}
+
+.card > img {
+    width: 160px;
+    margin-top: 0px;
+    position: relative;
+}
+
+.card > img.disabled {
+    display: none;
+}
+
+.additional-info {
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.additional-info > div {
+    width: 30%;
+}
+
+.card.closed {
+    height: 36px;
+}
+
+.wind-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wind-info img {
+    max-width: 130px;    
+}
+
+.wind-info span{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.temperature-info{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperature img{
+    margin-top: 20px;
+    width: 120px;
+}
+
+.temperature-info span {
+    margin: 20px 0 0 30px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+
+
+.air-info{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.air-info span:first-child{
+    width: 200px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+
+.air-info #AQIadvice {
+    width: 300px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    margin: 10px;
+}
+
